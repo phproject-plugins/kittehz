@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<include href="blocks/head.html" />
+</head>
+<body>
+<check if="{{ empty(@user) }}">
+	<true>
+		<include href="blocks/navbar-public.html" />
+	</true>
+	<false>
+		<include href="blocks/navbar.html" />
+	</false>
+</check>
+<div class="container">
+	<p class="text-center">
+		<img src="{{ @img->url }}" class="img-responsive" alt="{{ @img->id }}">
+	</p>
+	<include href="blocks/footer.html" />
+</div>
+</body>
+</html>
