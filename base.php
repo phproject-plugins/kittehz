@@ -2,7 +2,7 @@
 /**
  * @package  Kittehz
  * @author   Alan Hardman <alan@phpizza.com>
- * @version  1.0.0
+ * @version  1.1.0
  */
 
 namespace Plugin\Kittehz;
@@ -10,11 +10,12 @@ namespace Plugin\Kittehz;
 class Base extends \Plugin {
 
 	/**
-	 * Initialize the plugin
+	 * Initialize the plugin, adding the route and JS file
 	 */
 	public function _load() {
 		$f3 = \Base::instance();
 		$f3->route("GET /kitteh", "Plugin\Kittehz\Controller->kitteh");
+		$this->_addJs($f3->get("BASE") . "/app/plugin/kittehz/js/knmi.min.js", "file");
 	}
 
 	/**
